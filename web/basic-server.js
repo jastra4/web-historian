@@ -6,8 +6,22 @@ var initialize = require('./initialize.js');
 // HINT: It has to do with what's in .gitignore
 initialize('./archives');
 
+var router = {
+  '/': handler.default
+};
+
 var port = 8080;
 var ip = '127.0.0.1';
+/*var server = http.createServer(function(req, res) {
+  var path = url.parse(req.url).pathname;
+  console.log(path);
+  var route = router[path];
+  if (route) {
+    route(req, res);
+  } else if (fs.exists(archive.path.reasoures + path)) {
+    //handler.handleRequest(req, res);
+  }
+});*/
 var server = http.createServer(handler.handleRequest);
 
 if (module.parent) {
