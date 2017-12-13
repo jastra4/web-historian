@@ -42,7 +42,7 @@ describe('server', function() {
         request
           .get('/' + fixtureName)
           .expect(200, /google/, function (err) {
-            fs.unlinkSync(fixturePath);
+            //fs.unlinkSync(fixturePath);
             done(err);
           });
       });
