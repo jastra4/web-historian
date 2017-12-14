@@ -19,7 +19,6 @@ exports.serveAssets = function(res, asset, callback) {
   src.on('end', function() {
     res.end();
   });
-  
 };
 
 
